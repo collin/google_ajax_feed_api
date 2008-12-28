@@ -26,7 +26,7 @@ end
 
 namespace :gem do
   task :version do
-    @version = "0.0.1"
+    @version = "0.0.2"
   end
 
   task :build => :spec do
@@ -53,7 +53,7 @@ Gem::Specification.new do |s|
   s.authors          = ["Collin Miller"]
   s.email            = "collintmiller@gmail.com"
   s.homepage         = "http://github.com/collin/fold"
-  s.files            = %w{#{(%w(README Rakefile.rb) + Dir.glob("{lib,spec}/**/*")).join(' ')}}
+  s.files            = %w{#{(%w(README Rakefile.rb) + Dir.glob("{lib,spec}/**/*")).reject{|path| path.match /~$/ }.join(' ')}}
   
   s.add_dependency  "rake"
   s.add_dependency  "rspec"

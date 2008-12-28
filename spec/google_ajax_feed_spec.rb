@@ -1,4 +1,4 @@
-require 'lib/feed'
+require 'lib/google_ajax_feed_api'
 require 'rubygems'
 require 'spec'
 

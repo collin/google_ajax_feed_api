@@ -156,7 +156,6 @@ module Google #:nodoc:
           new url
         end
         
-        private        
         def api #:nodoc:
           API[config.version]
         end
@@ -201,7 +200,6 @@ module Google #:nodoc:
         end
       end
       
-      private
       def load options={} #:nodoc:
         url = self.class.api.load_query @url, options
         

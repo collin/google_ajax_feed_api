@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'ostruct'
 require 'extlib'
-require 'json/pure'
-require 'uri'
+require 'json'
 require 'open-uri'
 
 module Google #:nodoc:

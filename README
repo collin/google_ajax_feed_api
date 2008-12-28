@@ -12,8 +12,6 @@ Use it?
 
 >> require 'lib/feed'
 => true
->> feed = Google::Ajax::Feed
-Google::Ajax::Feed
 >> feed = Google::Ajax::Feed.lookup "olympichifi.com"
 => #<Google::Ajax::Feed:0xb77b660c @url="http://olympichifi.com/feed/">
 >> feed.title

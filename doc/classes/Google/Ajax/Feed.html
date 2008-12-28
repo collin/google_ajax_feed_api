@@ -55,20 +55,8 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
-                <a href="../../../files/lib/google_ajax_feed_api/api_rb.html">
-                lib/google_ajax_feed_api/api.rb
-                </a>
-        <br />
-                <a href="../../../files/lib/google_ajax_feed_api/api/one_zero_rb.html">
-                lib/google_ajax_feed_api/api/one_zero.rb
-                </a>
-        <br />
-                <a href="../../../files/lib/google_ajax_feed_api/feed_rb.html">
-                lib/google_ajax_feed_api/feed.rb
-                </a>
-        <br />
-                <a href="../../../files/lib/google_ajax_feed_api/entry_rb.html">
-                lib/google_ajax_feed_api/entry.rb
+                <a href="../../../files/lib/google_ajax_feed_api_rb.html">
+                lib/google_ajax_feed_api.rb
                 </a>
         <br />
             </td>
@@ -94,21 +82,6 @@
 
    </div>
 
-    <div id="method-list">
-      <h3 class="section-bar">Methods</h3>
-
-      <div class="name-list">
-      <a href="#M000006">author</a>&nbsp;&nbsp;
-      <a href="#M000003">canonical_id</a>&nbsp;&nbsp;
-      <a href="#M000001">config</a>&nbsp;&nbsp;
-      <a href="#M000008">description</a>&nbsp;&nbsp;
-      <a href="#M000009">entries</a>&nbsp;&nbsp;
-      <a href="#M000005">link</a>&nbsp;&nbsp;
-      <a href="#M000002">lookup</a>&nbsp;&nbsp;
-      <a href="#M000007">title</a>&nbsp;&nbsp;
-      <a href="#M000004">valid?</a>&nbsp;&nbsp;
-      </div>
-    </div>
 
   </div>
 
@@ -117,13 +90,20 @@
 
     <div id="section">
 
-    <div id="class-list">
-      <h3 class="section-bar">Classes and Modules</h3>
 
-      Class <a href="Feed/Entry.html" class="link">Google::Ajax::Feed::Entry</a><br />
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
 
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Version</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0.0.3&quot;</td>
+        </tr>
+        </table>
+      </div>
     </div>
-
 
 
 
@@ -131,226 +111,6 @@
 
 
     <!-- if method_list -->
-    <div id="methods">
-      <h3 class="section-bar">Public Class methods</h3>
-
-      <div id="method-M000001" class="method-detail">
-        <a name="M000001"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000001.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000001.html');return false;">
-          <span class="method-name">config</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Default values are:
-</p>
-<ul>
-<li>config.version = &#8216;1.0&#8216;
-
-</li>
-</ul>
-<p>
-version specifies what version of the feed API to use. 1.0 is the only
-version that exists and thusly the only option supported. DO NOT CHANGE
-THIS
-</p>
-<ul>
-<li>config.limit = 15
-
-</li>
-</ul>
-<p>
-limit specifies how many feed items may be fetched at once Google specifies
-a hard limit of 100. But an individual feed might have it&#8216;s own,
-lower limit.
-</p>
-<ul>
-<li>config.history = false
-
-</li>
-</ul>
-<p>
-Which is where the history option comes into play. History pulls from
-Googls cache of the feed, not from the current state of the feed. With this
-option you can fetch up to 100 items from a feed that shows fewer than 100
-at any given time.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000002" class="method-detail">
-        <a name="M000002"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000002.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000002.html');return false;">
-          <span class="method-name">lookup</span><span class="method-args">(url)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Lookup will take any of these url formats:
-</p>
-<ul>
-<li><a href="http://example.com">example.com</a>
-
-</li>
-<li><a href="http://example.com">example.com</a>/
-
-</li>
-<li><a href="http://www.example.com">www.example.com</a>/
-
-</li>
-<li><a href="http://www.example.com">www.example.com</a>
-
-</li>
-<li>example.com/rss
-
-</li>
-<li>etc.
-
-</li>
-</ul>
-<p>
-And the object created will have the same <a
-href="Feed.html#M000003">Feed#canonical_id</a> Use of Feed#new is strongly
-discouraged
-</p>
-        </div>
-      </div>
-
-      <h3 class="section-bar">Public Instance methods</h3>
-
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000006.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000006.html');return false;">
-          <span class="method-name">author</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-The <a href="Feed.html#M000006">author</a> of the feed.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000003" class="method-detail">
-        <a name="M000003"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000003.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000003.html');return false;">
-          <span class="method-name">canonical_id</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-A canonical identifier for the feed. Feeds found with <a
-href="Feed.html#M000002">Feed#lookup</a> will have the some <a
-href="Feed.html#M000003">canonical_id</a> even if the url used to find them
-was not 100% the same. (Missing &#8217;/&#8217; etc.)
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000008" class="method-detail">
-        <a name="M000008"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000008.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000008.html');return false;">
-          <span class="method-name">description</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-The <a href="Feed.html#M000008">description</a> of the feed.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000009" class="method-detail">
-        <a name="M000009"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000009.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000009.html');return false;">
-          <span class="method-name">entries</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-List of <a href="Feed/Entry.html">Entry</a> objects for this feed.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000005" class="method-detail">
-        <a name="M000005"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000005.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000005.html');return false;">
-          <span class="method-name">link</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-The <a href="Feed.html#M000005">link</a> of the feed.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000007" class="method-detail">
-        <a name="M000007"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000007.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000007.html');return false;">
-          <span class="method-name">title</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-The <a href="Feed.html#M000007">title</a> of the feed.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000004" class="method-detail">
-        <a name="M000004"></a>
-
-        <div class="method-heading">
-          <a href="Feed.src/M000004.html" target="Code" class="method-signature"
-            onclick="popupCode('Feed.src/M000004.html');return false;">
-          <span class="method-name">valid?</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p>
-true if the <a href="Feed.html#M000002">lookup</a> returned a positive
-match for a feed
-</p>
-        </div>
-      </div>
-
-
-    </div>
 
 
   </div>

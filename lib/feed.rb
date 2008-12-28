@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'ostruct'
 require 'extlib'
-require 'json'
+require 'json/pure'
 require 'uri'
 require 'open-uri'
 
@@ -79,8 +79,7 @@ module Google
             def load_params options={}
               options = ({
                 :limit => Feed.config.limit,
-                :history => nil,
-                :output => nil
+                :history => Feed.config.history
               }).merge(options)
               
               params = "&num=#{options[:limit]}"
@@ -138,8 +137,13 @@ module Google
       
       def load options={}
         url = self.class.api.load_query @url, options
-        http_response = JSON.parse open(url).read
+        
+        # Very strange json bug. Bye bye tabs        
+        http_response = JSON.parse open(url).read.gsub("\t", '')
+        
         @feed = http_response["responseData"]["feed"]
+        
+        return @feed.length
       end
     
       def feed

@@ -60,7 +60,7 @@ describe Google::Ajax::Feed do
   end
   
   it "constructs 1.0 finds" do
-    query = "senior supermans @w3s0me l33t <<>> machine"
+    query = "senior superman's @w3s0me l33t <<>> machine"
     GAF::API['1.0'].find_query(query).
       should == "#{GAF::API['1.0'].find}?v=1.0&q=#{URI.encode query}"
   end
@@ -77,6 +77,15 @@ describe Google::Ajax::Feed do
     GAF::API['1.0'].load_query(blog_url, :limit => 100, :history => true).
       should == 
       "#{GAF::API['1.0'].load}?v=1.0&q=#{URI.encode blog_url}&num=100&scoring=h"    
+  end
+  
+  it "constructs 1.0 loads with config options" do
+    blog_url = "http://someblog.com/?blog=franklins passion"
+    GAF.config.history = true
+    GAF::API['1.0'].load_query(blog_url).
+      should == 
+      "#{GAF::API['1.0'].load}?v=1.0&q=#{URI.encode blog_url}&num=15&scoring=h"  
+    GAF.config.history = nil
   end
   
   it "has configuration" do

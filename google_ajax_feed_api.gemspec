@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name             = "google_ajax_feed_api"
-  s.version          = "0.0.1"
+  s.version          = "0.0.2"
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.has_rdoc         = true
   s.summary          = "Light wrapper for Google Ajax Feed API"

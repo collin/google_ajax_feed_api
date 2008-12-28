@@ -43,7 +43,6 @@ module Google #:nodoc:
           @data["publishedDate"]
         end        
 
-        private
         def initialize data #:nodoc:
           @data = data
         end
@@ -93,7 +92,6 @@ module Google #:nodoc:
               "#{load}#{params url}#{load_params options}"
             end
             
-            private
             def load_params options={} #:nodoc
               options = ({
                 :limit => Feed.config.limit,
@@ -105,7 +103,6 @@ module Google #:nodoc:
               params        
             end
             
-            private
             def params query #:nodoc:
               "?v=1.0&q=#{URI.encode query}"
             end
@@ -211,13 +208,11 @@ module Google #:nodoc:
         return @feed.length
       end
     
-      private
       def feed #:nodoc:
         load if @feed.nil?
         @feed
       end
       
-      private 
       def initialize url #:nodoc:
         @url = url
       end

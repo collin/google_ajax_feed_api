@@ -26,7 +26,8 @@ end
 
 namespace :gem do
   task :version do
-    @version = "0.0.2"
+    require 'lib/google_ajax_feed_api'
+    @version = Google::Ajax::Feed::Version
   end
 
   task :build => :spec do

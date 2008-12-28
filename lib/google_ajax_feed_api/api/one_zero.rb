@@ -24,13 +24,11 @@ module Google
               "#{lookup}#{params url}"
             end
             
-            
             # Builds a query to search for feeds
             # query is a search term
             def find_query query
               "#{find}#{params query}"
             end
-            
             
             # Builds a query
             # options are overrides for Feed#config options

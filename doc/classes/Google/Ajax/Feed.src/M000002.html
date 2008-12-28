@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File lib/feed.rb, line 154</span>
+  <pre><span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 41</span>
         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup</span> <span class="ruby-identifier">url</span>
           <span class="ruby-identifier">http_response</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">open</span>(<span class="ruby-identifier">api</span>.<span class="ruby-identifier">lookup_query</span>(<span class="ruby-identifier">url</span>)).<span class="ruby-identifier">read</span>
           <span class="ruby-identifier">url</span> = <span class="ruby-identifier">http_response</span>[<span class="ruby-value str">&quot;responseData&quot;</span>][<span class="ruby-value str">&quot;url&quot;</span>]

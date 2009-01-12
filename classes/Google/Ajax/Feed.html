@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Google::Ajax::Feed</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Google::Ajax::Feed</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/google_ajax_feed_api/api_rb.html">
+                lib/google_ajax_feed_api/api.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/google_ajax_feed_api/api/one_zero_rb.html">
+                lib/google_ajax_feed_api/api/one_zero.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/google_ajax_feed_api/entry_rb.html">
+                lib/google_ajax_feed_api/entry.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/google_ajax_feed_api/feed_rb.html">
+                lib/google_ajax_feed_api/feed.rb
+                </a>
+        <br />
+                <a href="../../../files/lib/google_ajax_feed_api_rb.html">
+                lib/google_ajax_feed_api.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000006">author</a>&nbsp;&nbsp;
+      <a href="#M000003">canonical_id</a>&nbsp;&nbsp;
+      <a href="#M000001">config</a>&nbsp;&nbsp;
+      <a href="#M000008">description</a>&nbsp;&nbsp;
+      <a href="#M000009">entries</a>&nbsp;&nbsp;
+      <a href="#M000005">link</a>&nbsp;&nbsp;
+      <a href="#M000002">lookup</a>&nbsp;&nbsp;
+      <a href="#M000007">title</a>&nbsp;&nbsp;
+      <a href="#M000004">valid?</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Feed/Entry.html" class="link">Google::Ajax::Feed::Entry</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Version</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;0.0.4&quot;</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">config</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Default values are:
+</p>
+<ul>
+<li>config.version = &#8216;1.0&#8216;
+
+</li>
+</ul>
+<p>
+version specifies what version of the feed API to use. 1.0 is the only
+version that exists and thusly the only option supported. DO NOT CHANGE
+THIS
+</p>
+<ul>
+<li>config.limit = 15
+
+</li>
+</ul>
+<p>
+limit specifies how many feed items may be fetched at once Google specifies
+a hard limit of 100. But an individual feed might have it&#8216;s own,
+lower limit.
+</p>
+<ul>
+<li>config.history = false
+
+</li>
+</ul>
+<p>
+Which is where the history option comes into play. History pulls from
+Googls cache of the feed, not from the current state of the feed. With this
+option you can fetch up to 100 items from a feed that shows fewer than 100
+at any given time.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 23</span>
+23:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config</span>
+24:           <span class="ruby-ivar">@config</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">OpenStruct</span>.<span class="ruby-identifier">new</span>(
+25:             <span class="ruby-identifier">:version</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'1.0'</span>,
+26:             <span class="ruby-identifier">:limit</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">15</span>,
+27:             <span class="ruby-identifier">:history</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+28:           )
+29:         <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="#M000002" class="method-signature">
+          <span class="method-name">lookup</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Lookup will take any of these url formats:
+</p>
+<ul>
+<li><a href="http://example.com">example.com</a>
+
+</li>
+<li><a href="http://example.com">example.com</a>/
+
+</li>
+<li><a href="http://www.example.com">www.example.com</a>/
+
+</li>
+<li><a href="http://www.example.com">www.example.com</a>
+
+</li>
+<li>example.com/rss
+
+</li>
+<li>etc.
+
+</li>
+</ul>
+<p>
+And the object created will have the same <a
+href="Feed.html#M000003">Feed#canonical_id</a> Use of Feed#new is strongly
+discouraged
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 41</span>
+41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup</span> <span class="ruby-identifier">url</span>
+42:           <span class="ruby-identifier">http_response</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">open</span>(<span class="ruby-identifier">api</span>.<span class="ruby-identifier">lookup_query</span>(<span class="ruby-identifier">url</span>)).<span class="ruby-identifier">read</span>
+43:           <span class="ruby-identifier">response</span> = <span class="ruby-identifier">http_response</span>[<span class="ruby-value str">&quot;responseData&quot;</span>]
+44:           <span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">response</span>[<span class="ruby-value str">&quot;url&quot;</span>])
+45:         <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">author</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="Feed.html#M000006">author</a> of the feed.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 70</span>
+70:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">author</span>
+71:         <span class="ruby-identifier">feed</span>[<span class="ruby-value str">&quot;author&quot;</span>]
+72:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">canonical_id</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A canonical identifier for the feed. Feeds found with <a
+href="Feed.html#M000002">Feed#lookup</a> will have the some <a
+href="Feed.html#M000003">canonical_id</a> even if the url used to find them
+was not 100% the same. (Missing &#8217;/&#8217; etc.)
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 55</span>
+55:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">canonical_id</span>
+56:         <span class="ruby-ivar">@url</span>
+57:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">description</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="Feed.html#M000008">description</a> of the feed.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 80</span>
+80:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">description</span>
+81:         <span class="ruby-identifier">feed</span>[<span class="ruby-value str">&quot;description&quot;</span>]
+82:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="#M000009" class="method-signature">
+          <span class="method-name">entries</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+List of <a href="Feed/Entry.html">Entry</a> objects for this feed.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 85</span>
+85:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">entries</span>
+86:         <span class="ruby-ivar">@entries</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">feed</span>[<span class="ruby-value str">&quot;entries&quot;</span>].<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span> 
+87:           <span class="ruby-constant">Entry</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">entry</span>)
+88:         <span class="ruby-keyword kw">end</span>
+89:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="#M000005" class="method-signature">
+          <span class="method-name">link</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="Feed.html#M000005">link</a> of the feed.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 65</span>
+65:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">link</span>
+66:         <span class="ruby-identifier">feed</span>[<span class="ruby-value str">&quot;link&quot;</span>]
+67:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">title</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="Feed.html#M000007">title</a> of the feed.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 75</span>
+75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title</span>
+76:         <span class="ruby-identifier">feed</span>[<span class="ruby-value str">&quot;title&quot;</span>]
+77:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="#M000004" class="method-signature">
+          <span class="method-name">valid?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+true if the <a href="Feed.html#M000002">lookup</a> returned a positive
+match for a feed
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 60</span>
+60:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid?</span>
+61:         <span class="ruby-keyword kw">not</span> <span class="ruby-ivar">@url</span>.<span class="ruby-identifier">nil?</span>
+62:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -55,6 +55,13 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+<<<<<<< HEAD:classes/Google/Ajax/Feed.html
+=======
+                <a href="../../../files/lib/google_ajax_feed_api_rb.html">
+                lib/google_ajax_feed_api.rb
+                </a>
+        <br />
+>>>>>>> fbcc59b07b4f9a6f4696f185a79c4e4b530b85db:classes/Google/Ajax/Feed.html
                 <a href="../../../files/lib/google_ajax_feed_api/api_rb.html">
                 lib/google_ajax_feed_api/api.rb
                 </a>
@@ -71,10 +78,13 @@
                 lib/google_ajax_feed_api/feed.rb
                 </a>
         <br />
+<<<<<<< HEAD:classes/Google/Ajax/Feed.html
                 <a href="../../../files/lib/google_ajax_feed_api_rb.html">
                 lib/google_ajax_feed_api.rb
                 </a>
         <br />
+=======
+>>>>>>> fbcc59b07b4f9a6f4696f185a79c4e4b530b85db:classes/Google/Ajax/Feed.html
             </td>
         </tr>
 
@@ -136,7 +146,11 @@
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">Version</td>
           <td>=</td>
+<<<<<<< HEAD:classes/Google/Ajax/Feed.html
           <td class="context-item-value">&quot;0.0.4&quot;</td>
+=======
+          <td class="context-item-value">&quot;0.0.3&quot;</td>
+>>>>>>> fbcc59b07b4f9a6f4696f185a79c4e4b530b85db:classes/Google/Ajax/Feed.html
         </tr>
         </table>
       </div>
@@ -257,8 +271,13 @@ discouraged
     <span class="ruby-comment cmt"># File lib/google_ajax_feed_api/feed.rb, line 41</span>
 41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lookup</span> <span class="ruby-identifier">url</span>
 42:           <span class="ruby-identifier">http_response</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">open</span>(<span class="ruby-identifier">api</span>.<span class="ruby-identifier">lookup_query</span>(<span class="ruby-identifier">url</span>)).<span class="ruby-identifier">read</span>
+<<<<<<< HEAD:classes/Google/Ajax/Feed.html
 43:           <span class="ruby-identifier">response</span> = <span class="ruby-identifier">http_response</span>[<span class="ruby-value str">&quot;responseData&quot;</span>]
 44:           <span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">response</span>[<span class="ruby-value str">&quot;url&quot;</span>])
+=======
+43:           <span class="ruby-identifier">url</span> = <span class="ruby-identifier">http_response</span>[<span class="ruby-value str">&quot;responseData&quot;</span>][<span class="ruby-value str">&quot;url&quot;</span>]
+44:           <span class="ruby-identifier">new</span> <span class="ruby-identifier">url</span>
+>>>>>>> fbcc59b07b4f9a6f4696f185a79c4e4b530b85db:classes/Google/Ajax/Feed.html
 45:         <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

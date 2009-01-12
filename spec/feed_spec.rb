@@ -20,6 +20,10 @@ describe Google::Ajax::Feed do
   it "looks up feeds" do
     GAF.lookup('http://ajaxian.com').should_not be_nil
   end
+  
+  it "does not accept non-feeds" do
+    GAF.lookup('http://google.com').should_not be_valid
+  end
    
   it "validates feeds" do
     GAF.new(nil).should_not be_valid

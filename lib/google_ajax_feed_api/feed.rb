@@ -40,8 +40,8 @@ module Google #:nodoc:
         # Use of Feed#new is strongly discouraged
         def lookup url
           http_response = JSON.parse open(api.lookup_query(url)).read
-          url = http_response["responseData"]["url"]
-          new url
+          response = http_response["responseData"]
+          new(response.nil? ? nil : response["url"])
         end
         
         def api #:nodoc:

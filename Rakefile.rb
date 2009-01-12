@@ -17,6 +17,7 @@ namespace :spec do
   
   task :doc => :prepare do
     system "spec #{@specs} --format specdoc"
+    system "mv doc/* ../google_ajax_feed_api_docs -r"
   end
 end
 

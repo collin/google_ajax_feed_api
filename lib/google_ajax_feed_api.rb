@@ -9,7 +9,7 @@ $LOAD_PATH << File.dirname(__FILE__)
 module Google #:nodoc:
   module Ajax #:nodoc:
     class Feed
-      Version = "0.0.3"
+      Version = "0.0.4"
     end
     
     require 'google_ajax_feed_api/feed'
